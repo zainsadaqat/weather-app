@@ -1,6 +1,9 @@
 import axios from 'axios';
 import './App.css';
 import { useState } from 'react';
+import HomeScreen from './screens/HomeScreen';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import ResultScreen from './screens/ResultScreen';
 
 function App() {
   const [city, setCity] = useState('');
@@ -11,11 +14,19 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.get(URL);
-    const { feels_like, humidity, temp_min, temp_max } = res.data.main;
+    const { feels_like, humidity } = res.data.main;
   };
+
   return (
-    <div className="App">
-      <form onSubmit={handleSubmit}>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/result" element={<ResultScreen />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="city"
@@ -25,7 +36,7 @@ function App() {
           required
         />
         <button type="submit">Get Weather</button>
-      </form>
+      </form> */}
     </div>
   );
 }
