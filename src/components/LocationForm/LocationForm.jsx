@@ -6,7 +6,7 @@ import { AppContext } from '../../store/store';
 
 const LocationForm = () => {
   const [cityName, setCityName] = useState('');
-  const { state, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
   const navigate = useNavigate();
   const APP_ID = process.env.REACT_APP_ID;
   const CITY_NAME = cityName;

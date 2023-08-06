@@ -49,7 +49,7 @@ const DisplayResult = () => {
               <div className="my-4">
                 <img
                   src={Sun}
-                  alt="image according to the temperature"
+                  alt="according to the temperature"
                   width={100}
                   height={100}
                 />
