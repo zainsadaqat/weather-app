@@ -78,7 +78,7 @@ const DisplayResult = () => {
             <div className="footer">
               <div className="left-box">
                 <div>
-                  <image src="" alt="feels like icon" />
+                  <img src="" alt="feels like icon" />
                 </div>
                 <div className="left-align">
                   <p className="co-temp">
@@ -89,7 +89,7 @@ const DisplayResult = () => {
               </div>
               <div className="right-box">
                 <div>
-                  <image src="" alt="humidity" />
+                  <img src="" alt="humidity" />
                 </div>
                 <div className="left-align">
                   <p className="co-temp">
