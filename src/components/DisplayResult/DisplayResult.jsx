@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import './DisplayResult.css';
 import BackArrow from '../../assets/BackArrow';
 import { AppContext } from '../../store/store';
-import Sun from '../../assets/sun.png';
+import FeelsLikeImage from '../../assets/FeelsLikeImage.png';
+import HumidityImage from '../../assets/HumidityImage.png';
+import { iconsList } from './IconsList';
 
 const DisplayResult = () => {
   const { state } = useContext(AppContext);
-  console.log('State: ', state?.result?.data?.sys?.country);
-  console.log('State Error: ', state.error);
-
   if (state.error) {
     return (
       <section className="location-page">
@@ -48,7 +47,7 @@ const DisplayResult = () => {
             <div className="flex justify-center direction-column">
               <div className="my-4">
                 <img
-                  src={Sun}
+                  src={iconsList[state?.result?.data?.weather[0].description]}
                   alt="according to the temperature"
                   width={100}
                   height={100}
@@ -78,10 +77,15 @@ const DisplayResult = () => {
             <div className="footer">
               <div className="left-box">
                 <div>
-                  <img src="" alt="feels like icon" />
+                  <img
+                    src={FeelsLikeImage}
+                    alt="feels like icon"
+                    width={32}
+                    height={32}
+                  />
                 </div>
                 <div className="left-align">
-                  <p className="co-temp">
+                  <p className="feels-like">
                     {parseInt(state?.result?.data?.main?.feels_like - 273.15)}°C
                   </p>
                   <p>Feels like</p>
@@ -89,10 +93,15 @@ const DisplayResult = () => {
               </div>
               <div className="right-box">
                 <div>
-                  <img src="" alt="humidity" />
+                  <img
+                    src={HumidityImage}
+                    alt="humidity"
+                    width={32}
+                    height={32}
+                  />
                 </div>
-                <div className="left-align">
-                  <p className="co-temp">
+                <div className="right-align">
+                  <p className="humidity">
                     {state?.result?.data?.main?.humidity}%
                   </p>
                   <p>Humidity</p>

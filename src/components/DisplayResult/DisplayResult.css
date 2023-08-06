@@ -71,22 +71,37 @@
 }
 
 .left-box {
+  margin: 1em 0;
   flex-grow: 1;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-right: 1px solid #f0f0f0;
 }
 
 .right-box {
+  margin: 1em 0;
   flex-grow: 1;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-left: 1px solid #f0f0f0;
 }
 
-.left-align {
-  margin: 0;
+.left-align,
+.left-align p {
+  margin: 0 0.15em;
+  padding: 0;
 }
 
-.co-temp {
+.right-align,
+.right-align p {
+  margin: 0 0.15em;
+  padding: 0;
+}
+
+.feels-like,
+.humidity {
   font-size: 1rem;
   font-weight: bold;
 }
