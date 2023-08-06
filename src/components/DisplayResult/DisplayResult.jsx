@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import './DisplayResult.css';
 import BackArrow from '../../assets/BackArrow';
 import { AppContext } from '../../store/store';
+import Sun from '../../assets/sun.png';
 
 const DisplayResult = () => {
   const { state } = useContext(AppContext);
-  console.log('State: ', state.result.data.weather[0].description);
+  console.log('State: ', state?.result?.data?.sys?.country);
   console.log('State Error: ', state.error);
 
   if (state.error) {
@@ -24,7 +25,6 @@ const DisplayResult = () => {
             </div>
             <div className="hr"></div>
             <div className="flex justify-center">
-              {/* img */}
               <h2 className="error-message">City not found!</h2>
             </div>
           </div>
@@ -45,20 +45,34 @@ const DisplayResult = () => {
               <h2 className="form-heading">Weather App</h2>
             </div>
             <div className="hr"></div>
-            <div className="flex justify-center">
-              {/* img */}
-              <h2 className="temp">
-                {parseInt(state?.result?.data?.main?.temp - 273.15) ||
-                  'Temperature'}
-                °C
-              </h2>
-              <h3 className="temp-desc">
-                {state?.result?.data?.weather[0].description ||
-                  'Temperature description...'}
-              </h3>
-              <h3 className="temp-city">
-                {state?.result?.data?.name || 'City name...'}
-              </h3>
+            <div className="flex justify-center direction-column">
+              <div className="my-4">
+                <img
+                  src={Sun}
+                  alt="image according to the temperature"
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <div className="my-4">
+                <h2 className="temp">
+                  {parseInt(state?.result?.data?.main?.temp - 273.15) ||
+                    'Temperature'}
+                  °C
+                </h2>
+              </div>
+              <div>
+                <h3 className="temp-desc">
+                  {state?.result?.data?.weather[0].description ||
+                    'Temperature description...'}
+                </h3>
+              </div>
+              <div className="my-4">
+                <h3 className="temp-city">
+                  {state?.result?.data?.name || 'City'},{' '}
+                  {state?.result?.data?.sys?.country || 'Country'}
+                </h3>
+              </div>
             </div>
             <div className="hr"></div>
             <div className="footer">
@@ -73,7 +87,7 @@ const DisplayResult = () => {
                   <p>Feels like</p>
                 </div>
               </div>
-              <div className="righ-box">
+              <div className="right-box">
                 <div>
                   <image src="" alt="humidity" />
                 </div>
