@@ -1,20 +1,27 @@
 # Weather App
 
 ## Product Demo
-Project link : https://zains-home-assignment-weather-app.netlify.app/
+Project link: https://zains-home-assignment-weather-app.netlify.app/
 ## Project description
 
 **[Weather App]** The application has a form where users can input a location.
-The application be able to retrieve weather data based on the user's input.
-The application display the temperature, humidity, and other weather conditions for the user's input location.
+The application can retrieve weather data based on the user's input.
+The application displays the temperature, humidity, and other weather conditions for the user's input location.
 The application displays an appropriate weather icon based on the weather condition.
 The application is able to handle errors if the user's input is incorrect or if the API is unavailable.
+
+## Project Images
+### Home Page
+<img width="1440" alt="Screenshot 2023-08-07 at 4 12 54 PM" src="https://github.com/zainsadaqat/weather-app/assets/83048208/9d16189b-ecda-4cd6-84ca-2c056afc5e53">
+
+### Result Page
+<img width="1440" alt="Screenshot 2023-08-07 at 4 14 03 PM" src="https://github.com/zainsadaqat/weather-app/assets/83048208/3d9ca178-651e-4966-9ebc-65d79fbf86d0">
 
 ## Tech Stack
 
 - [ ] ReactJS
   - [ ] react router dom
-  - [ ] axios
+  - [ ] Axios
   - [ ] JSX
   - [ ] ES6
 - [ ] React hooks
@@ -39,9 +46,9 @@ In order to run this project you need:
 
 ### Setup
 
-To setup the project in your local machine, you need to follow the steps given below:
+To set up the project on your local machine, you need to follow the steps given below:
 
-Copy and paste the commands in your terminal.
+Copy and paste the commands into your terminal.
 
 ```
 git clone git@github.com:zainsadaqat/weather-app.git
